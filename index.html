@@ -1,0 +1,22 @@
+echo '<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HLS Stream Player</title>
+  <link href="https://unpkg.com/video.js/dist/video-js.css" 
+rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.js"></script>
+  <script 
+src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+</head>
+<body>
+  <video id="my-video" class="video-js vjs-default-skin" controls 
+preload="auto" width="640" height="360">
+    <source src="YOUR_HLS_STREAM_URL" type="application/x-mpegURL">
+  </video>
+  <script>
+    var player = videojs("my-video");
+  </script>
+</body>
+</html>' > index.html
+
