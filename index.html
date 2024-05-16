@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fives Soccer TV</title>
+    <title>Fives Soccer</title>
     <style>
-        h1 {
-            color: green;
+        .header {
+            display: flex;
+            align-items: center;
         }
-        .logo {
+        .header img {
             width: 1.5cm;
             height: 1.5cm;
-            position: absolute;
-            right: 10px;
-            top: 10px;
+            margin-right: 10px; /* Space between the logo and the heading */
+        }
+        h1 {
+            color: rgb(102, 255, 0);
         }
         .player-container {
-            margin-top: 50px;
+            margin-top: 20px; /* Add some space between the header and the player */
         }
     </style>
 </head>
 <body>
-    <h1>Fives Soccer TV</h1>
-    <img src="https://raw.githubusercontent.com/stuartjake/stuartjake.github.io/main/VMWS23DQ.png" alt="Logo" class="logo">
+    <div class="header">
+        <img src="https://raw.githubusercontent.com/stuartjake/stuartjake.github.io/main/VMWS23DQ.png" alt="Logo">
+        <h1>Fives Soccer TV</h1>
+    </div>
     <div class="player-container">
         <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
         <mux-player
