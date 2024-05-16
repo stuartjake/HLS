@@ -1,23 +1,19 @@
-echo '<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>HLS Stream Player</title>
-  <link href="https://unpkg.com/video.js/dist/video-js.css" 
-rel="stylesheet">
-  <script src="https://unpkg.com/video.js/dist/video.js"></script>
-  <script 
-src="https://unpkg.com/@videojs/http-streaming/dist/videojs-http-streaming.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUX Player Example</title>
 </head>
 <body>
-  <video id="my-video" class="video-js vjs-default-skin" controls 
-preload="auto" width="640" height="360">
-    <source 
-src="https://d1bsbizbbrvdbp.cloudfront.net/streaming/a3db9480a3c98225a1cbabeb792d7532.m3u8" 
-type="application/x-mpegURL">
-  </video>
-  <script>
-    var player = videojs("my-video");
-  </script>
+    <h1>Fives Soccer TV</h1>
+    <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
+    <mux-player
+      playback-id="012eUYE502FzbitpNPJq9u8tFyjAJWQSQvDlCY3v94DOM"
+      metadata-video-title="Placeholder (optional)"
+      metadata-viewer-user-id="Placeholder (optional)"
+      accent-color="#FF0000"
+    ></mux-player>
 </body>
-</html>' > index.html	
+</html>
+
