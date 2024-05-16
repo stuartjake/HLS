@@ -3,17 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fives Soccer TV</title>
+    <title>MUX Player Example</title>
+    <style>
+        h1 {
+            color: blue;
+        }
+        .logo {
+            width: 2cm;
+            height: 2cm;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .player-container {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Fives Soccer TV</h1>
-    <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
-    <mux-player
-      playback-id="012eUYE502FzbitpNPJq9u8tFyjAJWQSQvDlCY3v94DOM"
-      metadata-video-title="Placeholder (optional)"
-      metadata-viewer-user-id="Placeholder (optional)"
-      accent-color="#FF0000"
-    ></mux-player>
+    <h1>MUX Player Example</h1>
+    <img src="https://raw.githubusercontent.com/stuartjake/stuartjake.github.io/main/VMWS23DQ.png" alt="Logo" class="logo">
+    <div class="player-container">
+        <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
+        <mux-player
+          playback-id="012eUYE502FzbitpNPJq9u8tFyjAJWQSQvDlCY3v94DOM"
+          metadata-video-title="Placeholder (optional)"
+          metadata-viewer-user-id="Placeholder (optional)"
+          accent-color="#FF0000"
+        ></mux-player>
+    </div>
 </body>
 </html>
+
 
