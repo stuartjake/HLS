@@ -3,39 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fives Soccer</title>
-    <style>
-        .header {
-            display: flex;
-            align-items: center;
-        }
-        .header img {
-            width: 1.5cm;
-            height: 1.5cm;
-            margin-right: 10px; /* Space between the logo and the heading */
-        }
-        h1 {
-            color: black(102, 255, 0);
-        }
-        .player-container {
-            margin-top: 20px; /* Add some space between the header and the player */
-        }
-    </style>
+    <title>Mux Clip Creator</title>
 </head>
 <body>
-    <div class="header">
-        <img src="https://raw.githubusercontent.com/stuartjake/stuartjake.github.io/main/Logo_Fives.png" alt="Logo">
-        <h1>Fives Soccer TV</h1>
-    </div>
-    <div class="player-container">
-        <script src="https://cdn.jsdelivr.net/npm/@mux/mux-player"></script>
-        <mux-player
-          playback-id="012eUYE502FzbitpNPJq9u8tFyjAJWQSQvDlCY3v94DOM"
-          metadata-video-title="Placeholder (optional)"
-          metadata-viewer-user-id="Placeholder (optional)"
-          accent-color="#FF0000"
-        ></mux-player>
-    </div>
+    <h1>Create a Clip from Mux Asset</h1>
+    <form id="clipForm">
+        <label for="assetId">Mux Asset ID:</label><br>
+        <input type="text" id="assetId" name="assetId" required><br><br>
+
+        <label for="startTime">Start Time (in seconds):</label><br>
+        <input type="number" id="startTime" name="startTime" required><br><br>
+
+        <label for="endTime">End Time (in seconds):</label><br>
+        <input type="number" id="endTime" name="endTime" required><br><br>
+
+        <input type="submit" value="Create Clip">
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        document.getElementById('clipForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const assetId = document.getElementById('assetId').value;
+            const startTime = document.getElementById('startTime').value;
+            const endTime = document.getElementById('endTime').value;
+
+            const requestData = {
+                asset_id: assetId,
+                start_time: startTime,
+                end_time: endTime
+            };
+
+            fetch('https://202cb9b4-8c86-433a-94a9-7cd7a0a02d1a.mock.pstmn.io', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(requestData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('response').innerText = 'Clip created successfully: ' + JSON.stringify(data);
+            })
+            .catch(error => {
+                document.getElementById('response').innerText = 'Error creating clip: ' + error;
+            });
+        });
+    </script>
 </body>
 </html>
 
